@@ -2,6 +2,7 @@ package com.mkyong.hashing;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.apache.commons.lang3.StringUtils;
 
 public class AppTest {
 
@@ -16,6 +17,8 @@ public class AppTest {
     public void testHex() {
         String expected = "8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92";
         Assert.assertEquals(expected, App.sha256hex(INPUT));
+	Assert.assertTrue("The string should not be blank.  I hope I wrote this test right ...",
+				StringUtils.isNotBlank(App.sha256hex(INPUT)) != true);
     }
 
 }
